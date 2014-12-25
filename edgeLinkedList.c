@@ -37,3 +37,65 @@ void printEdgeList(struct graphEdge* aux)
 	printEdgeList(aux->right);
 }
 
+int deactivatedEdgeExists(struct graphEdge* inputEdge,struct graphEdge* aux)
+{
+	int exists = 0;
+	if(aux != NULL)
+	{
+		while(aux->right != NULL)
+		{
+			if(aux->i == inputEdge->i && aux->j == inputEdge->j) 
+			{
+				if(aux->active == 0)
+				{
+					exists = 1;
+				}
+				break;
+			}
+			else
+			{
+				aux = aux->right;
+			}
+		}
+		if(aux->i == inputEdge->i && aux->j == inputEdge->j)
+		{
+			if(aux->active == 0)
+			{
+				exists = 1;
+			}
+		}
+	}
+	return exists;
+}
+
+int activatedEdgeExists(struct graphEdge* inputEdge,struct graphEdge* aux)
+{
+	int exists = 0;
+	if(aux != NULL)
+	{
+		while(aux->right != NULL)
+		{
+			if(aux->i == inputEdge->i && aux->j == inputEdge->j) 
+			{
+				if(aux->active == 1)
+				{
+					exists = 1;
+				}
+				break;
+			}
+			else
+			{
+				aux = aux->right;
+			}
+		}
+		if(aux->i == inputEdge->i && aux->j == inputEdge->j)
+		{
+			if(aux->active == 1)
+			{
+				exists = 1;
+			}
+		}
+	}
+	return exists;
+}
+

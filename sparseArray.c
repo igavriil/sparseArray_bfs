@@ -274,7 +274,9 @@ void delete(struct matrix* sparseArray)
 {
 	printf("Insert pair (i,j) for graphNode\n");
 	struct graphNode* temp = (struct graphNode*)malloc(sizeof(struct graphNode));
-	scanf("%d %d",&temp->i, &temp->j);
+	scanf("%d", &temp->i);
+	getchar();
+	scanf("%d", &temp->j);
 	getchar();
 	
 	if(graphNodeExists(sparseArray,temp))
@@ -448,7 +450,7 @@ void readFromFile(struct matrix* sparseArray)
 	printf("reading file\n");
 	int i,j,data;
 	FILE *fp;
-	fp = fopen("/home/tsou/Desktop/structures/sparseArray/sparse.txt","r");
+	fp = fopen("/home/tsou/Desktop/structures_new/sparseArray/sparse.txt","r");
 
 	if(fp == NULL)
 	{
