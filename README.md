@@ -14,6 +14,8 @@ being processed first on the horizontal and then in the vertical linked list.
 Breadth First Search:
 The algorithm is simple but we need to implement some basic functionallity:
 A Queue which is implemented with a linked list
-Find next vertex to process.
+Find next edge to process (basically a dequeue functionality applied to the previous linked list datatype).
+Each edge's neighboor is easy to be found as we have implemented the graph as a sparce array.
 Terminate execution when all vetices are proccessed.
++ An algorithm to find after the construction of the acyclic graph the cycles that needed to be destructed in the initial graph.
 
